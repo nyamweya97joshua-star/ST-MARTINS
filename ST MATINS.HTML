@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ST MARTINS Junior School| Admin Command Center</title>
+    <link href="https://cdn.jsdelivr.net" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com">
+    <style>
+        :root { --trust-blue: #003366; --warm-gold: #D4AF37; --sidebar-width: 250px; }
+        body { background-color: #f4f7f6; font-family: 'Inter', sans-serif; }
+        
+        /* Sidebar Styling */
+        .sidebar { width: var(--sidebar-width); height: 100vh; position: fixed; background: var(--trust-blue); color: white; padding-top: 20px; }
+        .sidebar a { color: rgba(255,255,255,0.8); text-decoration: none; padding: 15px 25px; display: block; transition: 0.3s; }
+        .sidebar a:hover, .sidebar a.active { background: rgba(255,255,255,0.1); color: var(--warm-gold); border-left: 4px solid var(--warm-gold); }
+        
+        /* Main Content */
+        .main-content { margin-left: var(--sidebar-width); padding: 40px; }
+        .stat-card { border: none; border-left: 5px solid var(--warm-gold); border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .status-badge { font-size: 0.8rem; padding: 5px 12px; border-radius: 20px; font-weight: bold; }
+        .bg-pending { background: #fff3cd; color: #856404; }
+        .bg-approved { background: #d4edda; color: #155724; }
+        
+        .table-container { background: white; padding: 25px; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.05); }
+    </style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<div class="sidebar shadow">
+    <div class="px-4 mb-4">
+        <h4 class="fw-bold">ST MARTINS</h4>
+        <p class="small text-uppercase opacity-50">Admin Office</p>
+    </div>
+    <a href="#" class="active"><i class="fa fa-home me-2"></i> Dashboard</a>
+    <a href="#"><i class="fa fa-user-plus me-2"></i> New Admissions</a>
+    <a href="#"><i class="fa fa-users me-2"></i> Student List</a>
+    <a href="#"><i class="fa fa-file-invoice me-2"></i> Fee Records</a>
+    <a href="#"><i class="fa fa-cog me-2"></i> System Settings</a>
+</div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <div class="d-flex justify-content-between align-items-center mb-5">
+        <h2 class="fw-bold text-dark">Management Overview</h2>
+        <div class="dropdown">
+            <button class="btn btn-white shadow-sm border dropdown-toggle" data-bs-toggle="dropdown">
+                <i class="fa fa-user-circle me-2"></i> Admin Office
+            </button>
+        </div>
+    </div>
+
+    <!-- Stats Row -->
+    <div class="row mb-5 g-4">
+        <div class="col-md-3">
+            <div class="card stat-card p-3">
+                <p class="text-muted small mb-1">New Applicants</p>
+                <h3 class="fw-bold">42</h3>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card stat-card p-3">
+                <p class="text-muted small mb-1">Pending Interviews</p>
+                <h3 class="fw-bold">12</h3>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card stat-card p-3">
+                <p class="text-muted small mb-1">Approved Students</p>
+                <h3 class="fw-bold">128</h3>
+            </div>
+        </div>
+        <div class="col-md-3">
+            <div class="card stat-card p-3">
+                <p class="text-muted small mb-1">Total Collection</p>
+                <h3 class="fw-bold text-success">KES 1.2M</h3>
+            </div>
+        </div>
+    </div>
+
+    <!-- Applicant Table -->
+    <div class="table-container">
+        <div class="d-flex justify-content-between mb-4">
+            <h5 class="fw-bold">Recent Admission Requests</h5>
+            <input type="text" class="form-control w-25" placeholder="Search by ID or Name...">
+        </div>
+        <table class="table table-hover align-middle">
+            <thead class="table-light">
+                <tr>
+                    <th>Ref ID</th>
+                    <th>Student Name</th>
+                    <th>Grade</th>
+                    <th>Parent Contact</th>
+                    <th>Status</th>
+                    <th class="text-end">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="fw-bold text-muted">STM-2026-0042</td>
+                    <td>John Mutua</td>
+                    <td>Grade 4</td>
+                    <td>+254 712 345 678</td>
+                    <td><span class="status-badge bg-pending">Pending Review</span></td>
+                    <td class="text-end">
+                        <button class="btn btn-sm btn-outline-primary"><i class="fa fa-eye"></i></button>
+                        <button class="btn btn-sm btn-success"><i class="fa fa-check"></i></button>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="fw-bold text-muted">STM-2026-0041</td>
+                    <td>Sarah Kamau</td>
+                    <td>Grade 1</td>
+                    <td>+254 722 000 111</td>
+                    <td><span class="status-badge bg-approved">Admitted</span></td>
+                    <td class="text-end">
+                        <button class="btn btn-sm btn-outline-primary"><i class="fa fa-eye"></i></button>
+                        <button class="btn btn-sm btn-info text-white"><i class="fa fa-print"></i></button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net"></script>
+</body>
+</html>
